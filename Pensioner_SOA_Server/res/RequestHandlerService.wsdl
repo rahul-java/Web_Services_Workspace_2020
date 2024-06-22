@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://up.pension" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://up.pension" xmlns:intf="http://up.pension" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://up.pension" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getDataReturn" type="xsd:string"/>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getDataRequest">
+
+   </wsdl:message>
+
+   <wsdl:message name="getDataResponse">
+
+      <wsdl:part element="impl:getDataReturn" name="getDataReturn">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="RequestHandlerService">
+
+      <wsdl:operation name="getData">
+
+         <wsdl:input message="impl:getDataRequest" name="getDataRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getDataResponse" name="getDataResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="RequestHandlerServiceSoapBinding" type="impl:RequestHandlerService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getData">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getDataRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getDataResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="RequestHandlerServiceService">
+
+      <wsdl:port binding="impl:RequestHandlerServiceSoapBinding" name="RequestHandlerService">
+
+         <wsdlsoap:address location="http://localhost:8080/Pensioner_SOA_Client/services/RequestHandlerService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
